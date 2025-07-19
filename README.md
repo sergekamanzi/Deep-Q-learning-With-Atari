@@ -12,7 +12,7 @@ In here, we  used **Stable Baselines3** and **Gymnasium** to train and evaluate 
 
 | **Hyperparameter Set** | **Noted Behavior** |
 |------------------------|--------------------|
-|'jesse' `lr=, gamma=, batch= , epsilon_start=, epsilon_end=, epsilon_decay=` | |
+|'jesse' `lr=, gamma=, batch= , epsilon_start=, epsilon_end=, epsilon_decay=` |fjghg ilgiu gigiulg iuogiog  ivoig uogu ffyy ffty dsts xtrx rysx rst str srt stu tfy ug gio tufu ydy dtr syr sry srt stst ustu st str ust trs rst stu s |
 |'serge' `lr=, gamma=, batch= , epsilon_start=, epsilon_end=, epsilon_decay=` | |
 |'adediwura' `lr=, gamma=, batch= , epsilon_start=, epsilon_end=, epsilon_decay=` | |
 |'bernice' `lr=, gamma=, batch= , epsilon_start=, epsilon_end=, epsilon_decay=` | |
