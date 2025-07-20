@@ -15,7 +15,7 @@ In here, we  used **Stable Baselines3** and **Gymnasium** to train and evaluate 
 |'**jesse**' `lr=, gamma=, batch= , epsilon_start=, epsilon_end=, epsilon_decay=` | |
 |'**serge**' `lr=, gamma=, batch= , epsilon_start=, epsilon_end=, epsilon_decay=` | |
 |'**adediwura**' `lr=, gamma=, batch= , epsilon_start=, epsilon_end=, epsilon_decay=` | |
-|'**bernice**' `lr=, gamma=, batch= , epsilon_start=, epsilon_end=, epsilon_decay=` | |
+|'**bernice**' `lr= 1e-4, gamma=0.99, batch= 32, epsilon_start=0.1, epsilon_end=0.01, epsilon_decay= 0.1` | |
 
 
 ## How to Run
