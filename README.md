@@ -13,7 +13,7 @@ In here, we  used **Stable Baselines3** and **Gymnasium** to train and evaluate 
 | **Hyperparameter Set** | **Noted Behavior** |
 |------------------------|--------------------|
 |'**jesse**' `lr=1e-4, gamma=0.99, batch=32 , epsilon_start=1.0, epsilon_end=0.1, epsilon_decay=0.1, total_timesteps=200_000` |The model was beginning to learn strategies to succeed but learning was unstable because the total reward varied highly. |
-|'**serge**' `lr=5e-5, gamma=0.99, batch=32 , epsilon_start=1.0, epsilon_end=0.02, epsilon_decay=0.2, total_timesteps=100_000` |Total reward output was very low and stagnant at around 3 or 4. |
+|'**serge**' `lr=1e-4, gamma=0.99, batch=64 , epsilon_start=1.0, epsilon_end=0.01, epsilon_decay=0.1, total_timesteps=100_000` |so the timesteps i used here were little and usually for break-out game we use 1M but cause of the time to train was much bigger and the also the capacity was to large to handle, for buffersize using 10,000 was very low and also its good to start with 100k but also it requires much RAM. |
 |'**adediwura**' `lr=2e-4, gamma=0.99, batch=32 , epsilon_start=1.0, epsilon_end=0.01, epsilon_decay=0.1, total_timesteps=150_000` |There were a few episodes with zero rewards. |
 |'**bernice**' `lr= 1e-4, gamma=0.99, batch= 32, epsilon_start=1.0, epsilon_end=0.01, epsilon_decay= 0.1, total_timesteps=500_000` |The model was improving at the game as time went on. The total reward peaked at 20. |
 
