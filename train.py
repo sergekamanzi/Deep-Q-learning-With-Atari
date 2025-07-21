@@ -8,32 +8,32 @@ from stable_baselines3.common.callbacks import CheckpointCallback
 from stable_baselines3.common.monitor import Monitor
 from stable_baselines3.common.evaluation import evaluate_policy
 
-# 1. Set parameters
+#defining parameters
 ENV_ID = "ALE/Breakout-v5"
 MODEL_DIR = "models/dqn_models"
 LOG_DIR = "logs/"
-TOTAL_TIMESTEPS = 500_000
+TOTAL_TIMESTEPS = 500000
 
-# 2. Create environment with preprocessing
+#Creating environment with preprocessing to reduce noise and complexities to help the model learn faster
 def make_env():
-    env = gym.make(ENV_ID, render_mode=None) # No rendering for training
+    env = gym.make(ENV_ID, render_mode=None)
     env = AtariWrapper(env)
     env = Monitor(env)
     return env
 
-env = DummyVecEnv([make_env]) # Use DummyVecEnv for single environment
+env = DummyVecEnv([make_env]) 
 env_eval = DummyVecEnv([make_env]) 
 
-# 3. Set up checkpoint saving
+# setting checkpoint to evaluate model at every 50000 time steps
 checkpoint_callback = CheckpointCallback(
-    save_freq= 50_000,
+    save_freq= 50000,
     save_path=MODEL_DIR,
     name_prefix="dqn_model"
 )
 
-# 4. Create and train model
+#defining model and setting hyperparameters
 model = DQN(
-    "CnnPolicy",         # CNN for image input
+    "CnnPolicy",        
     env,
     learning_rate=1e-4,
     buffer_size=10_000,
@@ -49,13 +49,14 @@ model = DQN(
     tensorboard_log=LOG_DIR
 )
 
+#training the model
 model.learn(total_timesteps=TOTAL_TIMESTEPS, callback=checkpoint_callback)
 
-# 5. Save final model
+#Saving the final model
 model.save(os.path.join(MODEL_DIR, "dqn_model"))
-print("Training complete and model saved.")
+print("Final model saved.")
 
-# 6. Evaluate the trained model
+# Evaluating the overall trained model
 mean_reward, std_reward = evaluate_policy(
     model,
     env_eval,
