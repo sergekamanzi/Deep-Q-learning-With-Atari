@@ -18,13 +18,21 @@ In here, we  used **Stable Baselines3** and **Gymnasium** to train and evaluate 
 |'**bernice**' `lr= 1e-3, gamma=0.95, batch= 32, epsilon_start=1.0, epsilon_end=0.02, epsilon_decay= 0.1, total_timesteps=300000` |With epsilon_start=1.0 and a  decay of 0.1, the agent explores heavily early on, leading to inconsistent rewards between 1 and 6 across Episodes 1–15. The moderate gamma=0.95 encourages long-term reward, but learning is still unstable due to the exploitation value used.A lower  epsilon decay or more training steps could have improve performance by giving the agent more time to explore effectively before settling into exploitation. I initially started training on 1 million timesteps but Kaggle kept on crashing, compute difficulties, so I had to reduce the timesteps to be able train successfully|
 
 ### Comparison of CNN with MLP for Atari Breakout
-A CNN policy works better than an MLP policy for Breakout because:
 
-1. CNNs are designed for image inputs: Breakout observations are pixel-based frames (2D images). CNNs can extract spatial patterns like edges, shapes, and motion across frames.
+We compared MLPPolicy and CnnPolicy on the Breakout Atari environment to evaluate their performance. The CnnPolicy, designed for image inputs, learned effectively and improved over time. In contrast, the MLPPolicy performed poorly, with identical values for episode length and reward, indicating it failed to learn. This is expected, as MLPs are not suited for raw pixel observations. To make MLPPolicy usable, we would need to flatten or preprocess the image input, but even then, performance would remain suboptimal. Overall, CnnPolicy is clearly the better choice for visual environments like Breakout.
 
-2. Spatial locality: CNNs capture local visual features (e.g., ball location, paddle, bricks) and hierarchically build higher-level representations important for decision-making.
 
-3. MLPs ignore spatial structure: An MLP flattens the image, losing spatial relationships between pixels. This makes it harder to learn useful visual features.
+# POLICY COMPARISON
+We compared MLPPolicy and CnnPolicy on the Breakout Atari environment to evaluate their performance. The CnnPolicy, built mostly for  image-based input, learned effectively over time with varying reward structure and showing consistent learning growth. In contrast, the MLPPolicy performed poorly: both ep_len_mean and ep_rew_mean were same(e.g., 22.3, 22.3) throughout the whole training, indicating the agent received a reward of 1 per step and failed shortly after, without any meaningful improvement. This suggests the model was unable to extract useful features from the pixel input. We also tried to play the game and then it run into countless errors which majorly because of the shape cause this image was flattened but the input here is in frames.From our research, MLPs are not suitable for raw image data. MLPs are better suited for environments with low-dimensional, structured input such as CartPole, MountainCar, or environments with numerical state vectors. Hence, for breakout; Cnnpolicy is the best.
+
+Find notebooks here : 
+
+
+#GROUP CONTRIBUTION
+Jesse: Worked on play.py, also adjusted hyperparameters for training and the Readme as well
+Bernice: Worked on Train.py, adjusted hyperparameters for training and the Policy Comparison
+Serge : Worked on Train.py and then also adjusted hyperparameters for training
+Adediwura: Worked on play.py and also adjusted hyperparameters for training
 
 ## How to Run
 
