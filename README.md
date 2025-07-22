@@ -26,13 +26,16 @@ We compared MLPPolicy and CnnPolicy on the Breakout Atari environment to evaluat
 We compared MLPPolicy and CnnPolicy on the Breakout Atari environment to evaluate their performance. The CnnPolicy, built mostly for  image-based input, learned effectively over time with varying reward structure and showing consistent learning growth. In contrast, the MLPPolicy performed poorly: both ep_len_mean and ep_rew_mean were same(e.g., 22.3, 22.3) throughout the whole training, indicating the agent received a reward of 1 per step and failed shortly after, without any meaningful improvement. This suggests the model was unable to extract useful features from the pixel input. We also tried to play the game and then it run into countless errors which majorly because of the shape cause this image was flattened but the input here is in frames.From our research, MLPs are not suitable for raw image data. MLPs are better suited for environments with low-dimensional, structured input such as CartPole, MountainCar, or environments with numerical state vectors. Hence, for breakout; Cnnpolicy is the best.
 
 Find notebooks here : 
+- https://colab.research.google.com/drive/16LHr320ubRvcZn5l4hiGW9A7HBAHiSK_?usp=sharing - Cnnpolicy
+- https://colab.research.google.com/drive/1m3Dgzp96oULk1GIG21O9lpJlnNL64zoo?usp=sharing
 
 
-#GROUP CONTRIBUTION
-Jesse: Worked on play.py, also adjusted hyperparameters for training and the Readme as well
-Bernice: Worked on Train.py, adjusted hyperparameters for training and the Policy Comparison
-Serge : Worked on Train.py and then also adjusted hyperparameters for training
-Adediwura: Worked on play.py and also adjusted hyperparameters for training
+## Group Contribution
+
+- **Jesse**: Worked on `play.py`, adjusted hyperparameters for training, and contributed to the `README`.
+- **Bernice**: Worked on `train.py`, adjusted hyperparameters for training, and handled the policy comparison.
+- **Serge**: Worked on `train.py` and adjusted hyperparameters for training.
+- **Adediwura**: Worked on `play.py` and adjusted hyperparameters for training.
 
 ## How to Run
 
