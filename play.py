@@ -34,7 +34,7 @@ def main():
         steps = 0
 
         for _ in range(MAX_STEPS_PER_EPISODE):
-            action, _ = model.predict(obs, deterministic=False)
+            action, _ = model.predict(obs, deterministic=True)
             obs, reward, terminated, truncated, _ = env.step(action)
             total_reward += reward
             steps += 1
