@@ -9,7 +9,7 @@ In here, we  used **Stable Baselines3** and **Gymnasium** to train and evaluate 
 
 **Atari environment** chosen: BREAKOUT
 🔗 [Atari Environments (Gymnasium)](https://ale.farama.org/environments/breakout/)
-<img width="901" height="540" alt="Screenshot (424)" src="https://github.com/user-attachments/assets/9ec51a1f-f4bd-489b-9a27-6a6fedd8d9c2" />
+<img width="437" height="341" alt="Screenshot 2025-07-22 042252" src="https://github.com/user-attachments/assets/b74e4972-2dcc-41d4-b4de-4615546e7468" />
 
 ### Hyperparameter Configuration Table
 
@@ -24,12 +24,11 @@ In here, we  used **Stable Baselines3** and **Gymnasium** to train and evaluate 
 ### Comparison of CNN with MLP for Atari Breakout
 We compared MLPPolicy and CnnPolicy on the Breakout Atari environment to evaluate their performance. The CnnPolicy, built mostly for  image-based input, learned effectively over time with varying reward structure and showing consistent learning growth. In contrast, the MLPPolicy performed poorly: both ep_len_mean and ep_rew_mean were same(e.g., 22.3, 22.3) throughout the whole training, indicating the agent received a reward of 1 per step and failed shortly after, without any meaningful improvement. This suggests the model was unable to extract useful features from the pixel input. We also tried to play the game and then it run into countless errors which majorly because of the shape cause this image was flattened but the input here is in frames.From our research, MLPs are not suitable for raw image data. MLPs are better suited for environments with low-dimensional, structured input such as CartPole, MountainCar, or environments with numerical state vectors. Hence, for breakout; Cnnpolicy is the best.
 
-
-<img width="1366" height="768" alt="Screenshot (424)" src="https://github.com/user-attachments/assets/8c2484ef-92ec-4e19-97da-6a45eac8ad3e" />
+<img width="901" height="540" alt="Screenshot (424)" src="https://github.com/user-attachments/assets/9ec51a1f-f4bd-489b-9a27-6a6fedd8d9c2" />
 
 Find notebooks here : 
 - https://colab.research.google.com/drive/16LHr320ubRvcZn5l4hiGW9A7HBAHiSK_?usp=sharing - Cnnpolicy
-- https://colab.research.google.com/drive/1m3Dgzp96oULk1GIG21O9lpJlnNL64zoo?usp=sharing
+- https://colab.research.google.com/drive/1m3Dgzp96oULk1GIG21O9lpJlnNL64zoo?usp=sharing - Mlppolicy
 
 
 ## Group Contribution
