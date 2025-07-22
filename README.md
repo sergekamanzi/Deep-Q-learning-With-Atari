@@ -1,6 +1,7 @@
 # Formative 2 Assignment: Deep Q-Learning - Training and Playing an RL Agent
 
-<img width="1366" height="768" alt="Screenshot (425)" src="https://github.com/user-attachments/assets/5a445b86-920a-4e91-9485-8fdc7a48a082" />
+<img width="638" height="542" alt="Screenshot (425)" src="https://github.com/user-attachments/assets/e80dba26-ee11-42db-8bc3-84329d656506" />
+
 
 In here, we  used **Stable Baselines3** and **Gymnasium** to train and evaluate a **Deep Q-Network (DQN)** agent and  the agent will learn to play an **Atari game**
 
@@ -8,7 +9,7 @@ In here, we  used **Stable Baselines3** and **Gymnasium** to train and evaluate 
 
 **Atari environment** chosen: BREAKOUT
 🔗 [Atari Environments (Gymnasium)](https://ale.farama.org/environments/breakout/)
-<img width="437" height="341" alt="Screenshot 2025-07-22 042252" src="https://github.com/user-attachments/assets/4239f89d-8705-4eb4-8097-2ae5f3c19247" />
+<img width="901" height="540" alt="Screenshot (424)" src="https://github.com/user-attachments/assets/9ec51a1f-f4bd-489b-9a27-6a6fedd8d9c2" />
 
 ### Hyperparameter Configuration Table
 
